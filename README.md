@@ -15,14 +15,16 @@ Commands to create a cloud-init template for Proxmox 8.2.5
 - set the number as you wish, (I picked "1000") and this number will be the ID number of the cloud-init template, next argument will add memory resources, the next argument will add a number of cpu cores, then add an argument to be able to give a name for the template, and at the end it must be specified the network interface and by default the network interface in proxmox is "net0 virtio" but don't forget to set it as a "bridge mode"  
 
   $ qm create 1000 --memory 2048 --core 2 --name ubuntu-cloud --net0 virtio,bridge=vmbr0
-# after the command has been executed, a new VM will be displayed under your proxmox node
+# 
+after the command has been executed, a new VM will be displayed under your proxmox node
 
 # **STEP 2**
 
 - navigate in the node shell where you earlier executed the commands, and type the command to navigate into the directory where all ISOs are downloaded and stored.
 
   $ cd /var/lib/vz/template/iso/
-# now you can check with "ls -la" command to ensure your ISO is there.
+# 
+now you can check with "ls -la" command to ensure your ISO is there.
 
 # **STEP 3** 
 
@@ -44,7 +46,9 @@ Commands to create a cloud-init template for Proxmox 8.2.5
    
   $ qm set 1000 --ide2 local-lvm:cloudinit
    
- # **STEP 6** - in this step, we set on our VM "1000" in the boot options to use the scsi0 drive
+ # **STEP 6**
+ 
+ - in this step, we set on our VM "1000" in the boot options to use the scsi0 drive
  
   $ qm set 1000 --boot c --bootdisk scsi0
 
