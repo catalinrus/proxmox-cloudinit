@@ -4,7 +4,8 @@ Commands to create a cloud-init template for Proxmox 8.2.5
 1. Prerequisite:
    Download the ISO using the GUI   
 
-# I used the KVM image of Ubuntu 22.04 lts: https://cloud-images.ubuntu.com/daily/server/jammy/current/jammy-server-cloudimg-amd64-disk-kvm.img or you can use any of those images: https://cloud-init.io/
+# 
+I used the KVM image of Ubuntu 22.04 lts: https://cloud-images.ubuntu.com/daily/server/jammy/current/jammy-server-cloudimg-amd64-disk-kvm.img or you can use any of those images: https://cloud-init.io/
   https://cloud-images.ubuntu.com/daily/server/jammy/current/jammy-server-cloudimg-amd64-disk-kvm.img
 
 2. Create the VM for cloud-init template
@@ -66,14 +67,14 @@ The NEXT STEPS must be completed under the Proxmox GUI:
 # STEP 1
 select the new "1000" VM under you proxmox node then go to the
 - "Hardware" section.
-  Memory: you can modify memory size
-  Processors: here I set CPU type to "host" to have all capabilities of the host processor
-  Hard Disk: SSD emulation (if your proxmox node uses an ssd drive) and at DISK ACTION: increase the disk capacity.
+  - Memory: you can modify memory size
+  - Processors: here I set CPU type to "host" to have all capabilities of the host processor
+  - Hard Disk: SSD emulation (if your proxmox node uses an ssd drive) and at DISK ACTION: increase the disk capacity.
 - "Cloud-Init" section
-  User: add username
-  Password: add password
-  SSH Public key: add proxmox public key to be able to connect via SSH
-  IP Config: set it to DHCP (to give random IP to all VM clones)
+  - User: add username
+  - Password: add password
+  - SSH Public key: add proxmox public key to be able to connect via SSH
+  - IP Config: set it to DHCP (to give random IP to all VM clones)
 
 # STEP 2
 Right-click on the VM with ID "1000" and click on "Convert to template" (after this step, you can not make any changes)
