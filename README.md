@@ -29,7 +29,8 @@ Commands to create a cloud-init template for Proxmox 8.2.5
 - the ISO downloaded earlier in "Prerequisite" must be mounted/imported as a disk to our VM created in "Step 1". It must be mounted from the node's Shell with the next command:
    
   $ qm importdisk 1000 jammy-server-cloudimg-amd64-disk-kvm.img local-lvm                                              
- # as a Storage I used the default "local-lvm", if you have another storage such as a NAS, you must replace the "local-lvm" with your storage.
+ # 
+ as a Storage I used the default "local-lvm", if you have another storage such as a NAS, you must replace the "local-lvm" with your storage.
 
  # **STEP 4** - in this step, we set on our VM "1000" a disk that will be stored on local-lvm (or if you have a NAS, you can add your storage here). This step it is like plugging a harddrive into a motherboard.
 
