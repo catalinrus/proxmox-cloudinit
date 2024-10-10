@@ -32,11 +32,15 @@ Commands to create a cloud-init template for Proxmox 8.2.5
  # 
  as a Storage I used the default "local-lvm", if you have another storage such as a NAS, you must replace the "local-lvm" with your storage.
 
- # **STEP 4** - in this step, we set on our VM "1000" a disk that will be stored on local-lvm (or if you have a NAS, you can add your storage here). This step it is like plugging a harddrive into a motherboard.
+ # **STEP 4** 
+ 
+ - in this step, we set on our VM "1000" a disk that will be stored on local-lvm (or if you have a NAS, you can add your storage here). This step it is like plugging a harddrive into a motherboard.
 
   $ qm set 1000 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-1000-disk-0
 
- # **STEP 5** - in this step, we set on our VM "1000" "ide2" the cloud-init drive to our storage. This step is like attaching a CD/DVD drive with a disk inserted.
+ # **STEP 5**
+ 
+ - in this step, we set on our VM "1000" "ide2" the cloud-init drive to our storage. This step is like attaching a CD/DVD drive with a disk inserted.
    
   $ qm set 1000 --ide2 local-lvm:cloudinit
    
@@ -44,7 +48,9 @@ Commands to create a cloud-init template for Proxmox 8.2.5
  
   $ qm set 1000 --boot c --bootdisk scsi0
 
- # **STEP 7** - the final step, in this step we set the serial port on the VM to have the possibility to login via proxmox VNC and interact with the VM(the equivalent of plugging in a VGA monitor to our VM) in case of any network failure.
+ # **STEP 7**
+ 
+ - the final step, in this step we set the serial port on the VM to have the possibility to login via proxmox VNC and interact with the VM(the equivalent of plugging in a VGA monitor to our VM) in case of any network failure.
    
   $ qm set 1000 --serial0 socket --vga serial0
 
